@@ -1,14 +1,11 @@
 import React from 'react';
 import Link from '../../atoms/link';
-import Login from '../../../pages/login'
-import Home from '../../../pages/home'
-import Profile from '../../../pages/profile'
 
 const Nav = ({ isLogin, press, setPage }) => {
     const listLink = [
-        { text: "Home", element:Home(isLogin) },
-        { text: "Profile", element:Profile },
-        { text: "Login", element: Login, clickable: true },
+        { text: "Home", element:"Home" },
+        { text: "Profile", element:"Profile" },
+        { text: "Login", element: "Login", clickable: true },
     ]
 
 
