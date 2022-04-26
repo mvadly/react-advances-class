@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Alert from '../../components/atoms/alert';
 import Button from '../../components/atoms/button';
+import Link from '../../components/atoms/link';
 import { getServiceHome } from '../../services/home'
 
 const Home = (props) => {
@@ -19,6 +20,7 @@ const Home = (props) => {
             setPrev(res.data.previous)
         })
 
+
     }, [url])
 
     console.log(props)
@@ -26,7 +28,11 @@ const Home = (props) => {
     if (!props.isLogin) return <Alert type="danger" text="Anda perlu melakukan login dengan cara klik pada navigasi Login" />
     return (
         <>
-            <Alert type="success" text="Anda sudah Login..." />
+            {/* <Alert type="success" text="Anda sudah Login..." /> */}
+            <div style={{ marginBottom: "20px", textAlign:"left" }}>
+                <div style={{ fontSize: "25px", fontWeight: "bold" }}>List Character On Movie</div>
+                <small>Source API From <Link target="_blank" text="https://swapi.dev/api/people" href="https://swapi.dev/api/people"/></small>
+            </div>
             <table className="table">
                 <thead>
                     <tr>
@@ -38,14 +44,14 @@ const Home = (props) => {
                 <tbody>
                     {!loading ?
                         <tr><td colSpan={3}>Mohon menunggu...</td></tr> :
-                        data.map((val, i) => 
-                                <tr key={i}>
-                                    <td>{val.name}</td>
-                                    <td>{val.gender}</td>
-                                    <td>{val.height}</td>
-                                </tr>
-                            )
-                        
+                        data.map((val, i) =>
+                            <tr key={i}>
+                                <td>{val.name}</td>
+                                <td>{val.gender}</td>
+                                <td>{val.height}</td>
+                            </tr>
+                        )
+
                     }
                 </tbody>
             </table>

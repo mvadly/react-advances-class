@@ -11,7 +11,7 @@ const Layout = () => {
 
     const style = {
         padding: "30px",
-        textAlign:"center"
+        textAlign: "center"
     }
 
     const handleLoginLogout = () => {
@@ -19,14 +19,20 @@ const Layout = () => {
     }
 
     const returnPage = () => {
+        document.title = page
         switch (page) {
             case "Home":
-                return <Home isLogin={login}/>
+                return <Home isLogin={login} />
             case "Profile":
-                return <Profile />     
+                return <Profile />
             default:
-                return <Login />
-                break;
+                if (login && page !== "Login") {
+                    document.title = "Login"
+                    return <Login />
+                } else {
+                    document.title = "Home"
+                    return <Home isLogin={login} />
+                }
         }
     }
     return (
