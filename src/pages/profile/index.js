@@ -11,8 +11,9 @@ const Profile = () => {
                         <img class="company-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67516/b-01.png" alt="BigglesCodes" width="40" height="40" />
                     </picture>
                     <figcaption>
-                        <h1 class="name">Muhammad Fadly</h1>
-                        <h3 class="title">Application Developer</h3>
+                        <div class="name">Muhammad Fadly</div>
+                        <div class="title">Application Developer</div>
+                        <div>BRI Sudirman</div>
                     </figcaption>
                 </figure>
 
